@@ -1,0 +1,68 @@
+# Highland Mist - Alacritty theme
+[colors.primary]
+background = "#E6ECE8"
+foreground = "#0B1F2A"
+dim_foreground = "#43565D"
+bright_foreground = "#0B1F2A"
+
+[colors.cursor]
+text = "#E6ECE8"
+cursor = "#2A6640"
+
+[colors.vi_mode_cursor]
+text = "#E6ECE8"
+cursor = "#0B6862"
+
+[colors.selection]
+text = "#0B1F2A"
+background = "#AEC1B8"
+
+[colors.search.matches]
+foreground = "#E6ECE8"
+background = "#75592A"
+
+[colors.search.focused_match]
+foreground = "#E6ECE8"
+background = "#9C4A0E"
+
+[colors.hints.start]
+foreground = "#E6ECE8"
+background = "#75592A"
+
+[colors.hints.end]
+foreground = "#E6ECE8"
+background = "#43565D"
+
+[colors.footer_bar]
+foreground = "#E6ECE8"
+background = "#43565D"
+
+[colors.normal]
+black = "#2F4249"
+red = "#AE2F2A"
+green = "#2A6640"
+yellow = "#6E5C00"
+blue = "#1D5BA6"
+magenta = "#6A3893"
+cyan = "#0B6862"
+white = "#B4C2BB"
+
+[colors.bright]
+black = "#43565D"
+red = "#952824"
+green = "#215032"
+yellow = "#4F4200"
+blue = "#184D8C"
+magenta = "#5A307D"
+cyan = "#084C48"
+white = "#C4D0C9"
+
+[colors.dim]
+black = "#6F7E81"
+red = "#C2716C"
+green = "#6C957B"
+yellow = "#988E51"
+blue = "#638EBD"
+magenta = "#9577B1"
+cyan = "#589691"
+white = "#C6D1CB"

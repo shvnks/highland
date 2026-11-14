@@ -1,0 +1,38 @@
+# Highland Mist - WezTerm color scheme. Put in ~/.config/wezterm/colors/
+[colors]
+foreground = "#0B1F2A"
+background = "#E6ECE8"
+cursor_bg = "#2A6640"
+cursor_fg = "#E6ECE8"
+cursor_border = "#2A6640"
+selection_fg = "#0B1F2A"
+selection_bg = "#AEC1B8"
+scrollbar_thumb = "#B4C2BB"
+split = "#B4C2BB"
+compose_cursor = "#9C4A0E"
+ansi = ["#2F4249", "#AE2F2A", "#2A6640", "#6E5C00", "#1D5BA6", "#6A3893", "#0B6862", "#B4C2BB"]
+brights = ["#43565D", "#952824", "#215032", "#4F4200", "#184D8C", "#5A307D", "#084C48", "#C4D0C9"]
+
+[colors.tab_bar]
+background = "#CFD9D3"
+
+[colors.tab_bar.active_tab]
+bg_color = "#2A6640"
+fg_color = "#FFFFFF"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#DBE3DE"
+fg_color = "#43565D"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#D3DCD7"
+fg_color = "#0B1F2A"
+
+[colors.tab_bar.new_tab]
+bg_color = "#CFD9D3"
+fg_color = "#43565D"
+
+[metadata]
+name = "Highland Mist"
+author = "Shanks IT Solutions"
+origin_url = ""

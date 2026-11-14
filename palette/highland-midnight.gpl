@@ -1,0 +1,26 @@
+GIMP Palette
+Name: Highland Midnight
+Columns: 8
+#
+232 115 107	rowan
+230 154  94	bracken
+233 210 122	gorse
+198 164 106	gold
+130 194 147	moss
+ 98 195 186	loch
+116 169 234	saltire
+161 168 242	bluebell
+190 146 223	thistle
+227 147 193	heather
+230 236 232	text
+183 199 204	subtext1
+151 172 180	subtext0
+122 146 156	overlay2
+ 95 120 131	overlay1
+ 71  96 108	overlay0
+ 46  74  87	surface2
+ 34  61  73	surface1
+ 24  48  60	surface0
+ 11  31  42	base
+  8  24  34	mantle
+  5  17  26	crust

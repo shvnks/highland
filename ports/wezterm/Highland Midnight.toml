@@ -1,0 +1,38 @@
+# Highland Midnight - WezTerm color scheme. Put in ~/.config/wezterm/colors/
+[colors]
+foreground = "#E6ECE8"
+background = "#0B1F2A"
+cursor_bg = "#C6A46A"
+cursor_fg = "#0B1F2A"
+cursor_border = "#C6A46A"
+selection_fg = "#E6ECE8"
+selection_bg = "#244E40"
+scrollbar_thumb = "#2E4A57"
+split = "#2E4A57"
+compose_cursor = "#E69A5E"
+ansi = ["#223D49", "#E8736B", "#82C293", "#E9D27A", "#74A9EA", "#BE92DF", "#62C3BA", "#B7C7CC"]
+brights = ["#47606C", "#EC8C85", "#97CCA5", "#EDDB94", "#8FB9EE", "#CCAAE6", "#78CBC4", "#E6ECE8"]
+
+[colors.tab_bar]
+background = "#05111A"
+
+[colors.tab_bar.active_tab]
+bg_color = "#C6A46A"
+fg_color = "#05111A"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#081822"
+fg_color = "#97ACB4"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#18303C"
+fg_color = "#E6ECE8"
+
+[colors.tab_bar.new_tab]
+bg_color = "#05111A"
+fg_color = "#97ACB4"
+
+[metadata]
+name = "Highland Midnight"
+author = "Shanks IT Solutions"
+origin_url = ""

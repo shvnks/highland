@@ -1,0 +1,23 @@
+{
+  "name": "Highland Midnight",
+  "background": "#0B1F2A",
+  "foreground": "#E6ECE8",
+  "cursorColor": "#C6A46A",
+  "selectionBackground": "#244E40",
+  "black": "#223D49",
+  "brightBlack": "#47606C",
+  "red": "#E8736B",
+  "brightRed": "#EC8C85",
+  "green": "#82C293",
+  "brightGreen": "#97CCA5",
+  "yellow": "#E9D27A",
+  "brightYellow": "#EDDB94",
+  "blue": "#74A9EA",
+  "brightBlue": "#8FB9EE",
+  "purple": "#BE92DF",
+  "brightPurple": "#CCAAE6",
+  "cyan": "#62C3BA",
+  "brightCyan": "#78CBC4",
+  "white": "#B7C7CC",
+  "brightWhite": "#E6ECE8"
+}

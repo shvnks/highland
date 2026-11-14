@@ -1,0 +1,68 @@
+# Highland Midnight - Alacritty theme
+[colors.primary]
+background = "#0B1F2A"
+foreground = "#E6ECE8"
+dim_foreground = "#97ACB4"
+bright_foreground = "#E6ECE8"
+
+[colors.cursor]
+text = "#0B1F2A"
+cursor = "#C6A46A"
+
+[colors.vi_mode_cursor]
+text = "#0B1F2A"
+cursor = "#62C3BA"
+
+[colors.selection]
+text = "#E6ECE8"
+background = "#244E40"
+
+[colors.search.matches]
+foreground = "#0B1F2A"
+background = "#E9D27A"
+
+[colors.search.focused_match]
+foreground = "#0B1F2A"
+background = "#E69A5E"
+
+[colors.hints.start]
+foreground = "#0B1F2A"
+background = "#C6A46A"
+
+[colors.hints.end]
+foreground = "#0B1F2A"
+background = "#97ACB4"
+
+[colors.footer_bar]
+foreground = "#0B1F2A"
+background = "#97ACB4"
+
+[colors.normal]
+black = "#223D49"
+red = "#E8736B"
+green = "#82C293"
+yellow = "#E9D27A"
+blue = "#74A9EA"
+magenta = "#BE92DF"
+cyan = "#62C3BA"
+white = "#B7C7CC"
+
+[colors.bright]
+black = "#47606C"
+red = "#EC8C85"
+green = "#97CCA5"
+yellow = "#EDDB94"
+blue = "#8FB9EE"
+magenta = "#CCAAE6"
+cyan = "#78CBC4"
+white = "#E6ECE8"
+
+[colors.dim]
+black = "#1A323E"
+red = "#9B5654"
+green = "#58896E"
+yellow = "#9B935E"
+blue = "#4F79A7"
+magenta = "#7F6AA0"
+cyan = "#448A88"
+white = "#7B8C93"

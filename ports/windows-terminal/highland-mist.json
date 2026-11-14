@@ -1,0 +1,23 @@
+{
+  "name": "Highland Mist",
+  "background": "#E6ECE8",
+  "foreground": "#0B1F2A",
+  "cursorColor": "#2A6640",
+  "selectionBackground": "#AEC1B8",
+  "black": "#2F4249",
+  "brightBlack": "#43565D",
+  "red": "#AE2F2A",
+  "brightRed": "#952824",
+  "green": "#2A6640",
+  "brightGreen": "#215032",
+  "yellow": "#6E5C00",
+  "brightYellow": "#4F4200",
+  "blue": "#1D5BA6",
+  "brightBlue": "#184D8C",
+  "purple": "#6A3893",
+  "brightPurple": "#5A307D",
+  "cyan": "#0B6862",
+  "brightCyan": "#084C48",
+  "white": "#B4C2BB",
+  "brightWhite": "#C4D0C9"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "highland-theme",
+  "displayName": "Highland",
+  "description": "A Scottish Highland color palette from the Shanks brand.",
+  "version": "1.0.0",
+  "publisher": "shanks",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR-GITHUB-USER/highland"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "light",
+    "scottish",
+    "highland",
+    "green"
+  ],
+  "galleryBanner": {
+    "color": "#0B1F2A",
+    "theme": "dark"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Highland Midnight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/highland-midnight-color-theme.json"
+      },
+      {
+        "label": "Highland Mist",
+        "uiTheme": "vs",
+        "path": "./themes/highland-mist-color-theme.json"
+      }
+    ]
+  }
+}

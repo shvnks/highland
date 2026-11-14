@@ -1,0 +1,60 @@
+// Add to tailwind.config.js -> theme.extend.colors
+module.exports = {
+  "highland": {
+    "midnight": {
+      "rowan": "#E8736B",
+      "bracken": "#E69A5E",
+      "gorse": "#E9D27A",
+      "gold": "#C6A46A",
+      "moss": "#82C293",
+      "loch": "#62C3BA",
+      "saltire": "#74A9EA",
+      "bluebell": "#A1A8F2",
+      "thistle": "#BE92DF",
+      "heather": "#E393C1",
+      "text": "#E6ECE8",
+      "subtext1": "#B7C7CC",
+      "subtext0": "#97ACB4",
+      "overlay2": "#7A929C",
+      "overlay1": "#5F7883",
+      "overlay0": "#47606C",
+      "surface2": "#2E4A57",
+      "surface1": "#223D49",
+      "surface0": "#18303C",
+      "base": "#0B1F2A",
+      "mantle": "#081822",
+      "crust": "#05111A"
+    },
+    "mist": {
+      "rowan": "#AE2F2A",
+      "bracken": "#9C4A0E",
+      "gorse": "#6E5C00",
+      "gold": "#75592A",
+      "moss": "#2A6640",
+      "loch": "#0B6862",
+      "saltire": "#1D5BA6",
+      "bluebell": "#4A4FB0",
+      "thistle": "#6A3893",
+      "heather": "#9D346F",
+      "text": "#0B1F2A",
+      "subtext1": "#2F4249",
+      "subtext0": "#43565D",
+      "overlay2": "#5A6C70",
+      "overlay1": "#738581",
+      "overlay0": "#8C9C96",
+      "surface2": "#B4C2BB",
+      "surface1": "#C4D0C9",
+      "surface0": "#D3DCD7",
+      "base": "#E6ECE8",
+      "mantle": "#DBE3DE",
+      "crust": "#CFD9D3"
+    }
+  },
+  "brand": {
+    "forest": "#2D5E47",
+    "gold": "#C6A46A",
+    "midnight": "#0B1F2A",
+    "mist": "#E6ECE8",
+    "thistle": "#5B2E7E"
+  }
+};
