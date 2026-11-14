@@ -1,0 +1,4 @@
+# KDE Plasma color scheme template for any Base16/Base24 scheme (made for Highland)
+kde:
+  filename: colors/{{ scheme-system }}-{{ scheme-slug }}.colors
+  supported-systems: [base16, base24]

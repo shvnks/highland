@@ -2,7 +2,8 @@
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from highland_lib import FLAVORS, ansi, HERE, PAL
-OUT = os.path.join(HERE, 'ports', 'tinty', 'schemes')
+# Top-level base16/ and base24/ so the repo works as a tinty [[schemes.extras]] source
+OUT = HERE
 EXTRA = {  # base06/base07: lighter (dark flavor) or darker (light flavor) foregrounds
     'midnight': ('#EEF2EF', '#F7F9F8'),
     'mist':     ('#061620', '#020B10'),

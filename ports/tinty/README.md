@@ -12,7 +12,20 @@ This folder adds Highland to tinty, and makes the switch **live**: open windows 
 | **fzf** | Current shell gets new colors | The `tinty` wrapper in `shell/tinty.sh` |
 | **bat, btop, starship** | Follow the terminal colors | Use their terminal-color themes (see below) |
 
-## Install
+## Only the colors (no installer)
+
+On tinty 0.35+, add Highland by URL to `~/.config/tinted-theming/tinty/config.toml`:
+
+```toml
+[[schemes.extras]]
+name = "highland"
+path = "https://github.com/YOUR-GITHUB-USER/highland"
+```
+
+Then `tinty sync`. The schemes come from the top-level `base16/` and `base24/` folders of this repo,
+and each `tinty sync` pulls updates. No files to copy.
+
+## Install (full live setup)
 
 Needs `tinty` (`paru -S tinty` on CachyOS/Arch, or `cargo install tinty`) and `git`.
 
@@ -20,7 +33,8 @@ Needs `tinty` (`paru -S tinty` on CachyOS/Arch, or `cargo install tinty`) and `g
 bash ports/tinty/install.sh
 ```
 
-The script installs the schemes, templates and hooks, writes `~/.config/tinted-theming/tinty/config.toml`
+The script adds Highland as a `[[schemes.extras]]` source (tinty 0.35+; older tinty gets a copy in
+`custom-schemes`), installs the templates and hooks, writes `~/.config/tinted-theming/tinty/config.toml`
 (it backs up an existing one), runs `tinty sync`, and applies Highland Midnight.
 
 Then 2 manual steps:
@@ -70,8 +84,8 @@ KDE shortcut: **System Settings → Shortcuts → Add New → Command**, command
 ## Files
 
 ```
-schemes/base16|base24/   Highland scheme files (tinty custom schemes)
 templates/tinted-kde/    tinty template: KDE color scheme for any scheme
+                         (config.yaml.in is renamed to config.yaml on install)
 hooks/                   terminals-live.sh, kde-apply.sh
 shell/tinty.sh           bash/zsh wrapper, tinty init, ht picker
 config.toml              tinty config used by install.sh
@@ -88,6 +102,7 @@ tinty build ~/.local/share/tinted-theming/highland/templates/tinted-kde
 
 ```bash
 rm -rf ~/.local/share/tinted-theming/highland
-rm -f ~/.local/share/tinted-theming/tinty/custom-schemes/base{16,24}/highland-*.yaml
+rm -f ~/.local/share/tinted-theming/tinty/custom-schemes/base{16,24}/highland-*.yaml   # old installs
+# and remove the [[schemes.extras]] "highland" block from config.toml
 # restore your old config: ~/.config/tinted-theming/tinty/config.toml.bak.*
 ```

@@ -6,6 +6,12 @@ shell = "bash -c '{}'"
 default-scheme = "base24-highland-midnight"
 default-cycle-ring = "highland"
 
+# Highland schemes come straight from the Highland git repo (tinty 0.35+).
+# 'tinty sync' pulls updates. install.sh fills in the path.
+[[schemes.extras]]
+name = "highland"
+path = "https://github.com/YOUR-GITHUB-USER/highland"
+
 # Highland Midnight <-> Mist with one key:  tinty cycle
 [[rings]]
 name = "highland"

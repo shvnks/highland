@@ -28,7 +28,7 @@ jobs:
 
       - name: Ports are up to date with palette.json
         run: |
-          git diff --exit-code -- ports palette || {
+          git diff --exit-code -- ports palette base16 base24 || {
             echo "::error::Generated files changed. Run 'make build' and commit the result."; exit 1; }
 
       - name: Validate

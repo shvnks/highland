@@ -34,7 +34,12 @@ for p in glob.glob('ports/bat/*.tmTheme'):
 for p in glob.glob('ports/kde/*.colors')+glob.glob('ports/konsole/*.colorscheme'):
     try: cp=configparser.ConfigParser(strict=True); cp.optionxform=str; cp.read(p)
     except Exception as e: bad(f'{p}: {e}')
-for p in glob.glob('ports/tinty/schemes/*/*.yaml'):
+# Repo must work as a tinty [[schemes.extras]] source: tinty reads EVERY *.yaml in the repo as a scheme.
+for p in glob.glob('**/*.yaml',recursive=True):
+    if p.split('/')[0] not in ('base16','base24'): bad(f'{p}: *.yaml outside base16/ or base24/ breaks tinty (rename it)')
+for sysname in ('base16','base24'):
+    if not glob.glob(f'{sysname}/*.yaml'): bad(f'{sysname}/ is empty')
+for p in glob.glob('base*/*.yaml'):
     t=open(p).read(); sysname=p.split('/')[-2]
     need=[f'base0{x}' for x in '0123456789ABCDEF']+([f'base1{x}' for x in '01234567'] if sysname=='base24' else [])
     for k in need:

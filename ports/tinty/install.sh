@@ -10,13 +10,29 @@ HL="$DATA/highland"
 
 command -v tinty >/dev/null || { echo "tinty is not installed. CachyOS/Arch: paru -S tinty  (or: cargo install tinty)"; exit 1; }
 
-echo "1/6 Highland schemes -> $DATA/tinty/custom-schemes"
-mkdir -p "$DATA/tinty/custom-schemes"
-cp -r "$SRC/schemes/base16" "$SRC/schemes/base24" "$DATA/tinty/custom-schemes/"
+# Where tinty gets the Highland schemes:
+#  - tinty 0.35+: [[schemes.extras]] -> the GitHub repo (or this local clone)
+#  - older tinty: copy the files into custom-schemes
+URL=$(python3 -c "import json;print(json.load(open('$REPO/palette.json')).get('repository',''))" 2>/dev/null || true)
+case "$URL" in *YOUR-GITHUB-USER*|"") SOURCE="$REPO" ;; *) SOURCE="$URL" ;; esac
+TV=$(tinty --version | awk '{print $2}')
+if [ "$(printf '%s\n0.35.0\n' "$TV" | sort -V | head -1)" = "0.35.0" ]; then MODE=extras; else MODE=custom; fi
+# Old installs copied the schemes to custom-schemes; remove them (a duplicate name is an error in tinty).
+rm -f "$DATA/tinty/custom-schemes/base16/highland-"*.yaml "$DATA/tinty/custom-schemes/base24/highland-"*.yaml
+
+echo "1/6 Highland schemes ($MODE mode, tinty $TV)"
+if [ "$MODE" = custom ]; then
+  mkdir -p "$DATA/tinty/custom-schemes"
+  cp -r "$REPO/base16" "$REPO/base24" "$DATA/tinty/custom-schemes/"
+else
+  echo "    source: $SOURCE"
+fi
 
 echo "2/6 Templates, hooks, shell integration -> $HL"
 mkdir -p "$HL"
 cp -r "$SRC/templates" "$SRC/hooks" "$SRC/shell" "$HL/"
+# Stored as config.yaml.in in the repo, so tinty does not read it as a color scheme.
+mv -f "$HL/templates/tinted-kde/templates/config.yaml.in" "$HL/templates/tinted-kde/templates/config.yaml"
 chmod +x "$HL"/hooks/*.sh
 
 echo "3/6 Highland KDE + Konsole schemes"
@@ -30,7 +46,16 @@ if [ -f "$CONF/config.toml" ]; then
   cp "$CONF/config.toml" "$CONF/config.toml.bak.$(date +%Y%m%d%H%M%S)"
   echo "    Existing config backed up."
 fi
-cp "$SRC/config.toml" "$CONF/config.toml"
+if [ "$MODE" = extras ]; then
+  sed "s|^path = \"https://github.com/YOUR-GITHUB-USER/highland\"|path = \"$SOURCE\"|" "$SRC/config.toml" > "$CONF/config.toml"
+else  # remove the [[schemes.extras]] block for old tinty
+  python3 - "$SRC/config.toml" "$CONF/config.toml" <<'PY'
+import sys,re
+s=open(sys.argv[1]).read()
+s=re.sub(r'\[\[schemes\.extras\]\]\nname = "highland"\npath = "[^"]*"\n\n','',s)
+open(sys.argv[2],'w').write(s)
+PY
+fi
 
 echo "5/6 tinty sync (downloads templates from GitHub)"
 tinty sync

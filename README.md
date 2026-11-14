@@ -91,6 +91,19 @@ tinty cycle                    # Midnight <-> Mist, live
 
 Details: [ports/tinty/README.md](ports/tinty/README.md).
 
+### Add Highland to tinty by URL (tinty 0.35+)
+
+The repo has `base16/` and `base24/` at the top, so tinty can use it directly.
+Add this to your tinty `config.toml`, then run `tinty sync`:
+
+```toml
+[[schemes.extras]]
+name = "highland"
+path = "https://github.com/YOUR-GITHUB-USER/highland"
+```
+
+`tinty list` then shows `base16-highland-*` and `base24-highland-*`, and every `tinty sync` pulls updates.
+
 ## Ports and install
 
 | App | Files | Install |
@@ -124,6 +137,7 @@ plasma-apply-colorscheme HighlandMidnight
 
 ```
 palette.json      the colors (single source of truth)
+base16/ base24/   Base16/Base24 scheme files (generated; tinty reads them by URL)
 scripts/          generators + highland_lib.py + check.py
 ports/            generated app themes (do not edit by hand)
 palette/          generated CSS / SCSS / Tailwind / .gpl / JSON

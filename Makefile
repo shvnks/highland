@@ -25,7 +25,7 @@ check:            ## Validate generated files
 dist: vsix        ## Build release archive in dist/
 	mkdir -p dist
 	cp ports/vscode/highland-theme-$(VERSION).vsix dist/
-	zip -qr dist/highland-$(VERSION).zip ports palette palette.json README.md INSTALL.md LICENSE -x '*.vsix'
+	zip -qr dist/highland-$(VERSION).zip base16 base24 ports palette palette.json README.md INSTALL.md LICENSE -x '*.vsix'
 
 install-kde:      ## Install KDE + Konsole schemes for the current user
 	mkdir -p ~/.local/share/color-schemes ~/.local/share/konsole
