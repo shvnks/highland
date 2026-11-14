@@ -11,6 +11,7 @@ build:            ## Regenerate every port from palette.json
 	$(PY) scripts/gen_kde_terms.py
 	$(PY) scripts/gen_vim_cli.py
 	$(PY) scripts/gen_vscode.py
+	$(PY) scripts/gen_tinty.py
 
 vsix: build       ## Package the VS Code extension
 	cd ports/vscode && npx --yes @vscode/vsce package --allow-missing-repository -o highland-theme-$(VERSION).vsix

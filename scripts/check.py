@@ -34,4 +34,15 @@ for p in glob.glob('ports/bat/*.tmTheme'):
 for p in glob.glob('ports/kde/*.colors')+glob.glob('ports/konsole/*.colorscheme'):
     try: cp=configparser.ConfigParser(strict=True); cp.optionxform=str; cp.read(p)
     except Exception as e: bad(f'{p}: {e}')
+for p in glob.glob('ports/tinty/schemes/*/*.yaml'):
+    t=open(p).read(); sysname=p.split('/')[-2]
+    need=[f'base0{x}' for x in '0123456789ABCDEF']+([f'base1{x}' for x in '01234567'] if sysname=='base24' else [])
+    for k in need:
+        m=re.search(rf'^\s+{k}: "(#[0-9a-f]{{6}})"',t,re.M)
+        if not m: bad(f'{p}: missing {k}')
+    if f'system: "{sysname}"' not in t: bad(f'{p}: wrong system')
+for p in glob.glob('ports/tinty/**/*.sh',recursive=True):
+    if os.system(f'bash -n "{p}"'): bad(f'{p}: bash syntax')
+try: tomllib.load(open('ports/tinty/config.toml','rb'))
+except Exception as e: bad(f'tinty config: {e}')
 print('OK' if not err else f'{len(err)} problem(s)'); sys.exit(1 if err else 0)

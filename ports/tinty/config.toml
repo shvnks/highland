@@ -1,0 +1,59 @@
+# Highland + tinty config
+# Location: ~/.config/tinted-theming/tinty/config.toml
+# After editing: tinty sync
+
+shell = "bash -c '{}'"
+default-scheme = "base24-highland-midnight"
+default-cycle-ring = "highland"
+
+# Highland Midnight <-> Mist with one key:  tinty cycle
+[[rings]]
+name = "highland"
+schemes = ["base24-highland-midnight", "base24-highland-mist"]
+
+# --- Terminals: live recolor of ALL open terminal windows (Konsole, Kitty, Alacritty, WezTerm...) ---
+[[items]]
+name = "tinted-shell"
+path = "https://github.com/tinted-theming/tinted-shell"
+themes-dir = "scripts"
+supported-systems = ["base16", "base24"]
+hook = "~/.local/share/tinted-theming/highland/hooks/terminals-live.sh"
+
+# --- KDE Plasma: live desktop recolor (Highland uses the hand-tuned KDE schemes) ---
+[[items]]
+name = "tinted-kde"
+path = "~/.local/share/tinted-theming/highland/templates/tinted-kde"
+themes-dir = "colors"
+supported-systems = ["base16", "base24"]
+hook = "~/.local/share/tinted-theming/highland/hooks/kde-apply.sh"
+
+# --- Neovim / Vim: running editors reload on SIGUSR1 (see README for the 3-line config) ---
+[[items]]
+name = "tinted-vim"
+path = "https://github.com/tinted-theming/tinted-vim"
+themes-dir = "colors"
+supported-systems = ["base16", "base24"]
+hook = "mkdir -p ~/.config/nvim/colors ~/.vim/colors && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/nvim/colors/tinty.vim && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.vim/colors/tinty.vim && (pkill -USR1 -x nvim; pkill -USR1 -x vim; true)"
+
+# --- fzf: colors load into the shell through the tinty wrapper (shell/tinty.sh) ---
+[[items]]
+name = "tinted-fzf"
+path = "https://github.com/tinted-theming/tinted-fzf"
+themes-dir = "sh"
+supported-systems = ["base16", "base24"]
+
+# --- Optional: Kitty tab bar and borders too (enable remote reload with SIGUSR1) ---
+# [[items]]
+# name = "tinted-terminal-kitty"
+# path = "https://github.com/tinted-theming/tinted-terminal"
+# themes-dir = "themes/kitty"
+# supported-systems = ["base16", "base24"]
+# hook = "cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/kitty/tinty-theme.conf && (pkill -USR1 -x kitty; true)"
+
+# --- Optional: Alacritty (reloads imported files by itself) ---
+# [[items]]
+# name = "tinted-terminal-alacritty"
+# path = "https://github.com/tinted-theming/tinted-terminal"
+# themes-dir = "themes/alacritty"
+# supported-systems = ["base16", "base24"]
+# hook = "cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/alacritty/tinty-theme.toml"

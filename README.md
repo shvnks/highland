@@ -79,6 +79,18 @@ Selections and primary buttons use **Forest** as the background.
 Get the latest ZIP and the VS Code `.vsix` from [**Releases**](https://github.com/YOUR-GITHUB-USER/highland/releases/latest),
 or clone the repo. Step-by-step instructions for every app: [**INSTALL.md**](INSTALL.md).
 
+## Live theme switching (tinty)
+
+Highland works with [tinty](https://github.com/tinted-theming/tinty). One command recolors all open terminals,
+KDE Plasma, Neovim/Vim and fzf at once:
+
+```bash
+bash ports/tinty/install.sh    # one time
+tinty cycle                    # Midnight <-> Mist, live
+```
+
+Details: [ports/tinty/README.md](ports/tinty/README.md).
+
 ## Ports and install
 
 | App | Files | Install |
@@ -94,6 +106,7 @@ or clone the repo. Step-by-step instructions for every app: [**INSTALL.md**](INS
 | **btop** | `ports/btop/*.theme` | Copy to `~/.config/btop/themes/`, then Options (`o`) → color theme |
 | **bat** | `ports/bat/*.tmTheme` | Copy to `$(bat --config-dir)/themes/`, run `bat cache --build`, use `--theme="Highland-Midnight"` |
 | **fzf** | `ports/fzf/*.sh` | Add `source /path/to/highland-midnight.sh` to `~/.bashrc` or `~/.zshrc` |
+| **tinty** (live switching) | `ports/tinty/` | `bash ports/tinty/install.sh` - see [ports/tinty/README.md](ports/tinty/README.md) |
 | **Starship** | `ports/starship/highland.toml` | Paste the palettes into `~/.config/starship.toml` and set `palette = "highland_midnight"` |
 
 Palette files for design and web: `palette/` has `palette.json`, `highland.css`,

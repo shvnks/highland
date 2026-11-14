@@ -130,6 +130,15 @@ For fish: add `set -gx FZF_DEFAULT_OPTS ...` with the same value from the `.sh` 
 palette = "highland_midnight"
 ```
 
+## 13. tinty (live switching for all of the above)
+
+```bash
+bash ports/tinty/install.sh
+echo 'source ~/.local/share/tinted-theming/highland/shell/tinty.sh' >> ~/.bashrc   # or ~/.zshrc
+```
+
+Then `tinty cycle` switches Midnight <-> Mist everywhere, live. Neovim needs 3 lines: see `ports/tinty/README.md`.
+
 ---
 
 ## All Linux parts in one go
